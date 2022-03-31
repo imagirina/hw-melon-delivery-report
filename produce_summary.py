@@ -1,40 +1,15 @@
-print("Day 1")
-the_file = open("um-deliveries-day-1.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+def generate_report():
+    reports = ['um-deliveries-day-1.txt', 'um-deliveries-day-2.txt', 'um-deliveries-day-3.txt']
+    day = 1
+    for report in reports:
+        print(f"Day {day}")
+        the_file = open(report)
+        for line in the_file:
+            line = line.rstrip()         
+            melon, count, amount = line.split('|')
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+            print(f"\tDelivered {count} {melon}s for total of ${amount}")
+        the_file.close()
+        day += 1
 
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
-
-
-print("Day 2")
-the_file = open("um-deliveries-day-2.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
-
-
-print("Day 3")
-the_file = open("um-deliveries-day-3.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print(f"Delivered {count} {melon}s for total of ${amount}")
-the_file.close()
+generate_report()
